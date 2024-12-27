@@ -1,0 +1,21 @@
+.sellButton {
+  background: linear-gradient(90deg, red, green, yellow);
+  width: 20px;
+  height: 20px;
+}
+
+.all {
+  fill: white;
+}
+
+.top{
+    fill: #23e5db
+}
+
+.left{
+    fill: #ffce32
+}
+
+.right{
+    fill: #3a77ff
+}
