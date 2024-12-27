@@ -7,7 +7,7 @@ import Language from "./Navbar/Language";
 
 const Navbar = () => {
   return (
-    <div className="h-[4.2em] w-full flex bg-gray-100 pt-[10px] px-4 justify-between">
+    <div className="h-[4.2em] w-full flex bg-gray-100 pt-[10px] px-4 justify-between fixed">
       <Logo />
       <div className="pl-4 hidden md:flex">
         <form>
