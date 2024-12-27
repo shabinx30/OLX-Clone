@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { IoMdHeartEmpty } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -16,6 +17,8 @@ const Products = () => {
       .catch((error) => console.error("Error fetching products:", error));
   }, []);
 
+  const navigate = useNavigate()
+
   return (
     <div className="px-[10em] pt-5">
       
@@ -27,6 +30,7 @@ const Products = () => {
             <div key={product.id}>
               <div className="relative w-[17em] bg-white h-[17em] border-2 border-gray-300 rounded-md p-2">
                 <img
+                  onClick={() => navigate(`/product/${product?.id}`)}
                   src={product.thumbnail}
                   alt={product.title}
                   className="w-full h-[70%] object-cover"

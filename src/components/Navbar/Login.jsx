@@ -3,8 +3,19 @@ import loginImage from "/Users/hp/Downloads/loginEntryPointPost.webp";
 import { IoMdClose } from "react-icons/io";
 import { LuSmartphone } from "react-icons/lu";
 import { FcGoogle } from "react-icons/fc";
+import { signInWithPopup } from "firebase/auth";
+import { auth, googleProvider } from "../../firebase/setUp";
 
 const Login = () => {
+
+    const googleSignIn = async() => {
+        try {
+            await signInWithPopup(auth, googleProvider)
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
   return (
     <>
       <div
