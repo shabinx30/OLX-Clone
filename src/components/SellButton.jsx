@@ -7,7 +7,7 @@ const SellButton = () => {
       width={104}
       height={48}
       viewBox="0 0 1603 768"
-      className="_3V9PS"
+      className="_3V9PS relative"
     >
       <g>
         <path
