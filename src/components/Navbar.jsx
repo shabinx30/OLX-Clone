@@ -5,8 +5,11 @@ import { IoIosSearch, IoIosArrowDown } from "react-icons/io";
 import { FaPlus } from "react-icons/fa6";
 import Language from "./Navbar/Language";
 import Login from "./Navbar/Login";
+import { AuthProvider, useAuth } from "../context/AuthContext";
 
 const Navbar = () => {
+  const { currentUser, loading, signInWithGoogle, logout } = useAuth();
+
   return (
     <>
       <div className="z-10 h-[4.2em] w-full flex bg-gray-100 pt-[10px] px-4 justify-between fixed">
@@ -38,13 +41,17 @@ const Navbar = () => {
           </div>
         </div>
         <Language />
-        <p
-          data-modal-target="authentication-modal"
-          data-modal-toggle="authentication-modal"
-          className="text-black font-bold text-base underline mt-2 mr-3 cursor-pointer"
-        >
-          Login
-        </p>
+        {currentUser ? (
+          <p onClick={() => logout()} className="text-black font-bold text-base underline mt-2 mr-3 cursor-pointer">Logout</p>
+        ) : (
+          <p
+            data-modal-target="authentication-modal"
+            data-modal-toggle="authentication-modal"
+            className="text-black font-bold text-base underline mt-2 mr-3 cursor-pointer"
+          >
+            Login
+          </p>
+        )}
 
         <SellButton />
         <FaPlus size={20} className="absolute top-6 right-[4.8em]" />
