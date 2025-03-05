@@ -2,14 +2,15 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
+
 const firebaseConfig = {
-  apiKey: "AIzaSyATocmRwiTJ7Qk-1ujrvt7L0icVj3wEDwg",
-  authDomain: "shibu-olx-clone.firebaseapp.com",
-  projectId: "shibu-olx-clone",
-  storageBucket: "shibu-olx-clone.firebasestorage.app",
-  messagingSenderId: "826675606289",
-  appId: "1:826675606289:web:9feac1efb472732f1e52b0",
-  measurementId: "G-KDXNHQ1PBH",
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PRODUCT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
+  measurementId: import.meta.env.VITE_MEASURMENT_ID,
 };
 
 // Initialize Firebase

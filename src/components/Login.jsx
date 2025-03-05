@@ -1,13 +1,11 @@
 import React from "react";
-import loginImage from "/Users/hp/Downloads/loginEntryPointPost.webp";
+import loginImage from "../assets/loginEntryPointPost.webp";
 import { IoMdClose } from "react-icons/io";
 import { LuSmartphone } from "react-icons/lu";
 import { FcGoogle } from "react-icons/fc";
 import { signInWithPopup } from "firebase/auth";
-import { auth, googleProvider } from "../../firebase/setUp";
-// import { AuthProvider, useAuth } from '../../context/AuthContext'
+import { auth, googleProvider } from "../firebase/setUp";
 import { useRef } from "react";
-import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const butRef = useRef(null);
@@ -15,12 +13,6 @@ const Login = () => {
   const googleSignIn = async () => {
     try {
       await signInWithPopup(auth, googleProvider);
-      // if(butRef.current){
-        // setTimeout(()=>{
-        //   const navigate = useNavigate()
-        //   navigate('/')
-        // },3000)
-      // }
     } catch (error) {
       console.log(error);
     }

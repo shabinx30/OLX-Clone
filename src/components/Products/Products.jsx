@@ -20,22 +20,22 @@ const Products = () => {
   const navigate = useNavigate()
 
   return (
-    <div className="px-[10em] pt-5">
+    <div className="px-[2em] md:px-[5em] lg:px-[10em] pt-5">
       
 
       <h1 className="text-2xl font-medium">Fresh recommendations</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 pt-5">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4 w-full pt-5">
         {products.length > 0 ? (
           products.map((product) => (
             <div key={product.id}>
-              <div className="relative w-[17em] bg-white h-[17em] border-2 border-gray-300 rounded-md p-2">
+              <div className="relative bg-white border-2 border-gray-300 rounded-md p-2">
                 <img
                   onClick={() => navigate(`/product/${product?.id}`)}
                   src={product.thumbnail}
                   alt={product.title}
                   className="w-full h-[70%] object-cover"
                 />
-                <p className="mt-2 font-bold text-xl">₹{product.price}</p>
+                <p className="mt-2 font-bold text-xl">₹{((product.price * 83)/4.5).toFixed(2)}</p>
                 <p className="text-gray-500 text-sm">{product.title}</p>
                 <div className="flex text-gray-500 text-[10px] mt-2 justify-between">
                   <p>KERALA</p>

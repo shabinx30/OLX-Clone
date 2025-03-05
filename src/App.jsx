@@ -5,6 +5,7 @@ import Product from "./pages/Product";
 import Navbar from "./components/Navbar";
 import Category from "./components/Category/Category";
 import { AuthProvider } from "./context/AuthContext";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/product/:id" element={<Product />} />
         </Routes>
+        <Footer/>
       </AuthProvider>
     </>
   );
