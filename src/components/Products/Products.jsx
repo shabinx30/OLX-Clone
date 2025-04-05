@@ -28,7 +28,7 @@ const Products = () => {
         {products.length > 0 ? (
           products.map((product) => (
             <div key={product.id}>
-              <div className="relative bg-white border-2 border-gray-300 rounded-md p-2">
+              <div className="relative bg-white border-2 border-gray-300 rounded-md p-2 cursor-pointer">
                 <img
                   onClick={() => navigate(`/product/${product?.id}`)}
                   src={product.thumbnail}

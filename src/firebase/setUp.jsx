@@ -2,6 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
+console.log(import.meta.env.VITE_PRODUCT_ID)
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_API_KEY,
